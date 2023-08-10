@@ -35,12 +35,10 @@ export const getStaticProps: GetStaticProps = async (ctx) => {
   }.svg`,
  }));
 
- for (const pokemon of pokemons) {
- }
-
  return {
   props: {
    pokemons,
   },
  };
 };
+// https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/2.png

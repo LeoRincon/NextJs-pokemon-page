@@ -1,5 +1,6 @@
 import { Spacer, Text, useTheme } from '@nextui-org/react';
 import Image from 'next/image';
+import Link from 'next/link';
 
 export const NavBar = () => {
  const { theme } = useTheme();
@@ -16,12 +17,14 @@ export const NavBar = () => {
     backgroundColor: theme?.colors.gray900.value,
    }}
   >
-   <Image
-    src='https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/132.png'
-    alt='Page Icon'
-    width={70}
-    height={70}
-   />
+   <Link href='/'>
+    <Image
+     src='https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/132.png'
+     alt='Page Icon'
+     width={70}
+     height={70}
+    />
+   </Link>
 
    <Text color='white' h2>
     P
