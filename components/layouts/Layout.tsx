@@ -17,9 +17,9 @@ export const Layout: FC<Props> = ({ children, tittle }) => {
     <meta name='author' content='Leonardo Rincón' />
     <meta
      name='description'
-     content='Information about the Pokemon: PokeName'
+     content={`Information about the Pokemon: ${tittle}`}
     />
-    <meta name='keywords' content='PokeName, Pokemon, pokedex' />
+    <meta name='keywords' content={`${tittle}, Pokemon, pokedex`} />
    </Head>
 
    <NavBar />

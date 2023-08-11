@@ -11,10 +11,8 @@ interface Props {
  pokemon: PokemonByID;
 }
 const PokemonPage: NextPage<Props> = ({ pokemon }) => {
- console.info('🇨🇴🚨 => file: [id].tsx:13 => pokemon:', pokemon);
-
  return (
-  <Layout tittle='Any pokemon'>
+  <Layout tittle={pokemon.name}>
    <Grid.Container gap={2} css={{ marginTop: '5px' }}>
     <Grid xs={12} sm={4}>
      <Card hoverable css={{ padding: '30px' }}>
