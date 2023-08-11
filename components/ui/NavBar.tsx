@@ -1,4 +1,4 @@
-import { Spacer, Text, useTheme } from '@nextui-org/react';
+import { Spacer, Text, useTheme, Container } from '@nextui-org/react';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -25,13 +25,21 @@ export const NavBar = () => {
      height={70}
     />
    </Link>
-
-   <Text color='white' h2>
-    P
-   </Text>
-   <Text color='white' h3>
-    okémon
-   </Text>
+   <Link href='/'>
+    <Container
+     direction='row'
+     display='flex'
+     alignItems='center'
+     css={{ padding: '0' }}
+    >
+     <Text color='white' h2>
+      P
+     </Text>
+     <Text color='white' h3>
+      okémon
+     </Text>
+    </Container>
+   </Link>
 
    <Spacer
     css={{
