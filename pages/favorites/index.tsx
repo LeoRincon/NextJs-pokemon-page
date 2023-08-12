@@ -1,30 +1,23 @@
-import { Grid } from '@nextui-org/react';
-
 import { Layout } from '@/components/layouts';
-import { PokemonCard } from '@/components/pokemon';
+import { FavoriteListPokemons } from '@/components/pokemon';
+import { NoFavorites } from '@/components/ui/NoFavorites';
+import { localFavorites } from '@/utils';
+import { useState, useEffect } from 'react';
 
-let pokemon = [
- {
-  id: 151,
-  img: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/151.svg',
-  name: 'mew',
-  url: 'https://pokeapi.co/api/v2/pokemon/151/',
- },
- {
-  id: 151,
-  img: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/151.svg',
-  name: 'mew',
-  url: 'https://pokeapi.co/api/v2/pokemon/151/',
- },
-];
 const FavoritesPage = () => {
+ const [favoritesPokemons, setFavoritesPokemons] = useState<number[]>([]);
+
+ useEffect(() => {
+  setFavoritesPokemons(localFavorites.FavoritesPokemonsIds());
+ }, []);
+
  return (
   <Layout tittle='Favorites Pokemons'>
-   <Grid.Container gap={1}>
-    {pokemon.map((p) => (
-     <PokemonCard key={p.id} pokemon={p} />
-    ))}
-   </Grid.Container>
+   {favoritesPokemons.length === 0 ? (
+    <NoFavorites />
+   ) : (
+    <FavoriteListPokemons pokemonsListIds={favoritesPokemons} />
+   )}
   </Layout>
  );
 };
