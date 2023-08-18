@@ -11,7 +11,6 @@ export const getPokemonInfo = async (paramOfSearch: string) => {
    sprites: data.sprites,
   };
  } catch (error) {
-  console.log(error);
   return null;
  }
 };
