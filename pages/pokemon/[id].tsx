@@ -105,11 +105,13 @@ export const getStaticPaths: GetStaticPaths = async (ctx) => {
 };
 
 export const getStaticProps: GetStaticProps = async (ctx) => {
+ const TIME_IN_SECONDS_TO_REVALIDATE = 86400;
  const { id } = ctx.params as { id: string };
  return {
   props: {
    pokemon: await getPokemonInfo(id),
   },
+  revalidate: TIME_IN_SECONDS_TO_REVALIDATE, // 24 hours
  };
 };
 
