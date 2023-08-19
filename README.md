@@ -1,6 +1,8 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-This is a page where you can search pokemons and add them to favorites.
+This is a page where you can search Pokemons and add them to your favorites.
+
+In this project, we can learn about ISR, ISG, and SSG using the [PokeAPI](https://pokeapi.co/) 
 
 ## Getting Started
 
